@@ -9,20 +9,33 @@ namespace TestBaudot
         {
             string plain = "The quick brown fox jumped over the lazy dog." + Environment.NewLine +
                "abcdefghijklmnopqrstuvwxyz" + Environment.NewLine +
-               "0123456789 - ' Э Ш Щ Ю ( ) + / : = ? , .";
+               "0123456789 - ' ! & $ Ю ( ) + / : = ? , .";
 
-            var baudot = Baudot.ToCode(plain, false);
+            bool lsbFirst = false;
+
+            var baudot = Baudot.ToCode(plain, lsbFirst);
+
+            int codesPrinted = 0;
 
             foreach (var b in baudot)
             {
-                Console.Write(Convert.ToInt16(b.Value));
+                if(codesPrinted % 10 == 0)
+                {
+                    Console.WriteLine();
+                }
+
+                string binary = "0000" + Convert.ToString(b.Value, 2);
+
+                Console.Write(binary.Substring(binary.Length - 5));
                 Console.Write(' ');
+
+                ++codesPrinted;
             }
 
             Console.WriteLine();
             Console.WriteLine();
 
-            Console.Write(Baudot.FromCode(baudot, false));
+            Console.Write(Baudot.FromCode(baudot, lsbFirst));
 
             Console.ReadKey();
         }

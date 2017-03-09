@@ -68,21 +68,6 @@
             // that are not in main array.
             switch (ch)
             {
-                case 'Э':
-                    result = lsbFirst ?
-                        (VBit)22 :
-                        (VBit)13;
-                    return true;
-                case 'Ш':
-                    result = lsbFirst ?
-                        (VBit)11 :
-                        (VBit)26;
-                    return true;
-                case 'Щ':
-                    result = lsbFirst ?
-                        (VBit)5 :
-                        (VBit)20;
-                    return true;
                 case 'Ю':
                     result = lsbFirst ?
                         (VBit)26 :
