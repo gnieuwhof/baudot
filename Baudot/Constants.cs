@@ -2,6 +2,9 @@
 {
     internal static class Constants
     {
+        // Baudot alphabet:
+        // http://www.cryptomuseum.com/crypto/baudot.htm
+
         // Shift to Figures code.
         public static readonly VBit FS = (VBit)27;
 

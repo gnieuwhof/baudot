@@ -24,24 +24,29 @@
         public VBit(byte value)
         {
             if (value > 31)
-                throw new ArgumentException("Value cannot be higher than 31.");
+                throw new ArgumentException(
+                    "Value cannot be neative or higher than 31."
+                    );
 
             this.Value = value;
         }
 
 
         // Assignment.
+        // Note: This must be explicit, because
+        // we cannot hold the enire byte range.
+        // (the contructor will throw if the value > 31)
+        // (negative will overflow to 255)
         public static explicit operator VBit(byte value)
         {
             return new VBit(value);
         }
-
-
+        
         public override bool Equals(object obj)
         {
             if (obj is VBit)
             {
-                return Equals((VBit)obj);
+                return this.Equals((VBit)obj);
             }
             else
             {
@@ -70,17 +75,6 @@
             return first.Equals(second);
         }
         public static bool operator !=(VBit first, VBit second)
-        {
-            return !first.Equals(second);
-        }
-
-
-        // Byte equality.
-        public static bool operator ==(VBit first, byte second)
-        {
-            return first.Equals(second);
-        }
-        public static bool operator !=(VBit first, byte second)
         {
             return !first.Equals(second);
         }

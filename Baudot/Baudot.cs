@@ -49,19 +49,18 @@
             // lookup array.
             if (ch < Constants.LsbFirstCodeLookup.Length)
             {
-                if (lsbFirst)
-                {
-                    result = (VBit)Constants.LsbFirstCodeLookup[ch];
-                }
-                else
-                {
-                    result = (VBit)Constants.MsbFirstCodeLookup[ch];
-                }
-
-                // If result is 255 the char is found in the lookup
+                byte temp = (lsbFirst) ?
+                    Constants.LsbFirstCodeLookup[ch] :
+                    Constants.MsbFirstCodeLookup[ch];
+                
+                // If temp is 255 the char is found in the lookup
                 // array but is not a baudot supported character.
 
-                return (result != 0xFF);
+                result = (temp == 0xFF) ?
+                    new VBit() :
+                    (VBit)temp;
+
+                return (temp != 0xFF);
             }
 
             // Check if the char is one of the four
