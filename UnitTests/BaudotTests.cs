@@ -2,10 +2,26 @@
 {
     using nl.gn.Baudot;
     using NUnit.Framework;
+    using System;
+    using System.Linq;
 
     [TestFixture]
     public class BaudotTests
     {
+        [Test]
+        public void ToCodeArgumentNullTest()
+        {
+            Assert.Throws(Is.TypeOf<ArgumentNullException>(),
+                () => Baudot.ToCode(null, true).ToList());
+        }
+
+        [Test]
+        public void FromCodeArgumentNullTest()
+        {
+            Assert.Throws<ArgumentNullException>(
+                () => Baudot.FromCode(null, true).ToList());
+        }
+
         [Test]
         public void ToCodeLsbFirstAlphabetTest()
         {
