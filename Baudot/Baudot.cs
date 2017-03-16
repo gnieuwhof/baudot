@@ -1,6 +1,8 @@
 ﻿namespace nl.gn.Baudot
 {
+    using System;
     using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Text;
 
@@ -47,7 +49,10 @@
 
             // Check if we can lookup the char in the "main"
             // lookup array.
-            if (ch < Constants.LsbFirstCodeLookup.Length)
+            if (ch < Constants.LsbFirstCodeLookup.Length
+                // These arrays have the same length...
+                //&& ch < Constants.MsbFirstCodeLookup.Length
+                )
             {
                 byte temp = (lsbFirst) ?
                     Constants.LsbFirstCodeLookup[ch] :
@@ -90,6 +95,11 @@
         /// <returns>Enumerable of Baudot codes.</returns>
         public static IEnumerable<VBit> ToCode(string str, bool lsbFirst)
         {
+            if (str == null)
+                throw new ArgumentNullException(nameof(str));
+            Contract.Ensures(
+                Contract.Result<IEnumerable<VBit>>() != null );
+
             // Start in the default Letter Shift.
             Shift currentSet = Shift.Letter;
 
@@ -126,6 +136,10 @@
         /// <returns>String representation of the given code.</returns>
         public static string FromCode(IEnumerable<VBit> baudot, bool lsbFirst)
         {
+            if (baudot == null)
+                throw new ArgumentNullException(nameof(baudot));
+            Contract.Ensures( Contract.Result<String>() != null );
+            
             var builder = new StringBuilder();
 
             // If the first code is not the FS (Shift to Figures)
@@ -151,6 +165,13 @@
                         continue;
                     }
 
+                    // These constant arrays have length VBit.MaxValue
+                    //if(code.Value >= Constants.LsbFirstLetterLookup.Length ||
+                    //    code.Value >= Constants.MsbFirstLetterLookup.Length)
+                    //{
+                    //    continue;
+                    //}
+
                     // Get letter shift code.
                     char c = lsbFirst ?
                         Constants.LsbFirstLetterLookup[code.Value] :
@@ -171,6 +192,13 @@
                         // We are already in the figures shift.
                         continue;
                     }
+
+                    // These constant arrays have length VBit.MaxValue
+                    //if(code.Value >= Constants.LsbFirstFigureLookup.Length ||
+                    //    code.Value >= Constants.MsbFirstFigureLookup.Length)
+                    //{
+                    //    continue;
+                    //}
 
                     // Get figure shift code.
                     char c = lsbFirst ?
