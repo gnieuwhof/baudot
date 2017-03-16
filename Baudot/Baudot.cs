@@ -145,6 +145,11 @@
                         currentSet = Shift.Figure;
                         continue;
                     }
+                    else if(code == Constants.LS)
+                    {
+                        // We are already in letters shift.
+                        continue;
+                    }
 
                     // Get letter shift code.
                     char c = lsbFirst ?
@@ -159,6 +164,11 @@
                     if (code == Constants.LS)
                     {
                         currentSet = Shift.Letter;
+                        continue;
+                    }
+                    else if(code == Constants.FS)
+                    {
+                        // We are already in the figures shift.
                         continue;
                     }
 
