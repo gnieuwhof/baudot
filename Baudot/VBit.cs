@@ -24,8 +24,9 @@
         public VBit(byte value)
         {
             if (value > 31)
-                throw new ArgumentException(
-                    "Value cannot be neative or higher than 31."
+                throw new ArgumentOutOfRangeException(
+                    nameof(value),
+                    "Value cannot be negative or higher than 31."
                     );
 
             this.Value = value;

@@ -22,25 +22,23 @@
         }
 
         [Test]
-        public void TestCreateVBit()
+        public void TestCreateVBit(
+            //[Range(0,31)] // a bit overkill. 
+            [Values(0, 31)] int val)
         {
-            var vbit = CastCreateVBit(22);
+            var vbit = CastCreateVBit(val);
 
-            Assert.AreEqual(22, vbit.Value);
+            Assert.AreEqual(val, vbit.Value);
         }
 
         [Test]
-        public void TestOverflowVBit()
+        public void TestOverflowVBit(
+            [Values(-1, 32)] int val)
         {
-            Assert.Throws<ArgumentException>(() => CastCreateVBit(32));
+            Assert.Throws<ArgumentOutOfRangeException>(
+                () => CastCreateVBit(val));
         }
-
-        [Test]
-        public void TestNegativeVBit()
-        {
-            Assert.Throws<ArgumentException>(() => CastCreateVBit(-1));
-        }
-
+        
         [Test]
         public void TestVBitEquals()
         {
