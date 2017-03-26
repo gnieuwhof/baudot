@@ -30,7 +30,7 @@
 		private static bool TryCharToCode(
 			char ch, out VBit result, out Shift shift, bool lsbFirst)
 		{
-			// Determine wheter the char lives in both shifts,
+			// Determine whether the char lives in both shifts,
 			// in the letter shift or otherwise default to the figure shift.
 			switch (ch)
 			{

@@ -13,7 +13,7 @@
 
 		/*
          * Note
-         * There are two types of lookp arrays in this class:
+         * There are two types of lookup arrays in this class:
          * 
          * 1) Char to Code
          * 2) Code to Char
