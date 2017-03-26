@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baudot", "Baudot\Baudot.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{E0561EDB-1E7E-4F18-8328-926C26963B10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nl.gn.BaudotPortable", "nl.gn.BaudotPortable\nl.gn.BaudotPortable.csproj", "{00B51BB2-0A8B-4E06-9228-CED93C976B77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E0561EDB-1E7E-4F18-8328-926C26963B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0561EDB-1E7E-4F18-8328-926C26963B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0561EDB-1E7E-4F18-8328-926C26963B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B51BB2-0A8B-4E06-9228-CED93C976B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B51BB2-0A8B-4E06-9228-CED93C976B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B51BB2-0A8B-4E06-9228-CED93C976B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B51BB2-0A8B-4E06-9228-CED93C976B77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
