@@ -1,17 +1,17 @@
 ﻿namespace nl.gn.BaudotPortable
 {
-	internal static class Constants
-	{
-		// Baudot alphabet:
-		// http://www.cryptomuseum.com/crypto/baudot.htm
+    internal static class Constants
+    {
+        // Baudot alphabet:
+        // http://www.cryptomuseum.com/crypto/baudot.htm
 
-		// Shift to Figures code.
-		public static readonly VBit FS = (VBit)27;
+        // Shift to Figures code.
+        public static readonly VBit FS = (VBit)27;
 
-		// Shift to Letter code.
-		public static readonly VBit LS = (VBit)31;
+        // Shift to Letter code.
+        public static readonly VBit LS = (VBit)31;
 
-		/*
+        /*
          * Note
          * There are two types of lookup arrays in this class:
          * 
@@ -25,18 +25,18 @@
          * the code as index.
          */
 
-		/******************************
+        /******************************
          * MOST SIGNIFICANT BIT FIRST
          ******************************/
 
-		// Main MSB first lookup array.
-		// Char to code.
-		// This array handles most of the Baudot characters.
-		// Lookup results in 255 if the char is not a supported
-		// Baudot code char.
-		public static readonly byte[] MsbFirstCodeLookup = new byte[]
-		{
-			0,      // NUL  0
+        // Main MSB first lookup array.
+        // Char to code.
+        // This array handles most of the Baudot characters.
+        // Lookup results in 255 if the char is not a supported
+        // Baudot code char.
+        public static readonly byte[] MsbFirstCodeLookup = new byte[]
+        {
+            0,      // NUL  0
             0xFF,   // SOH  1
             0xFF,   // STX  2
             0xFF,   // ETX  3
@@ -129,11 +129,11 @@
             17,     // Z    90
         };
 
-		// MSB first Letter Shift lookup array.
-		// Code to char.
-		public static readonly char[] MsbFirstLetterLookup = new[]
-		{
-			'\0', // 00000
+        // MSB first Letter Shift lookup array.
+        // Code to char.
+        public static readonly char[] MsbFirstLetterLookup = new[]
+        {
+            '\0', // 00000
             'E',  // 00001
             '\n', // 00010
             'A',  // 00011
@@ -167,11 +167,11 @@
             '_'   // 11111 // Reserved for lowercase extension
         };
 
-		// MSB first Figure Shift lookup array.
-		// Code to char.
-		public static readonly char[] MsbFirstFigureLookup = new[]
-		{
-			'\0', // 00000
+        // MSB first Figure Shift lookup array.
+        // Code to char.
+        public static readonly char[] MsbFirstFigureLookup = new[]
+        {
+            '\0', // 00000
             '3',  // 00001
             '\n', // 00010
             '-',  // 00011
@@ -206,18 +206,18 @@
         };
 
 
-		/******************************
+        /******************************
          * LEAST SIGNIFICANT BIT FIRST
          ******************************/
 
-		// Main LSB first lookup array.
-		// Char to code.
-		// This array handles most of the Baudot characters.
-		// Lookup results in 255 if the char is not a supported
-		// Baudot code char.
-		public static readonly byte[] LsbFirstCodeLookup = new byte[]
-		{
-			0,      // NUL  0
+        // Main LSB first lookup array.
+        // Char to code.
+        // This array handles most of the Baudot characters.
+        // Lookup results in 255 if the char is not a supported
+        // Baudot code char.
+        public static readonly byte[] LsbFirstCodeLookup = new byte[]
+        {
+            0,      // NUL  0
             0xFF,   // SOH  1
             0xFF,   // STX  2
             0xFF,   // ETX  3
@@ -310,11 +310,11 @@
             17,     // Z    90
         };
 
-		// LSB first Letter Shift lookup array.
-		// Code to char.
-		public static readonly char[] LsbFirstLetterLookup = new[]
-		{
-			'\0', // 00000
+        // LSB first Letter Shift lookup array.
+        // Code to char.
+        public static readonly char[] LsbFirstLetterLookup = new[]
+        {
+            '\0', // 00000
             'T',  // 00001
             '\r', // 00010
             'O',  // 00011 
@@ -348,11 +348,11 @@
             '_'   // 11111 // Reserved for lowercase extension
         };
 
-		// MSB first Figure Shift lookup array.
-		// Code to char.
-		public static readonly char[] LsbFirstFigureLookup = new[]
-		{
-			'\0', // 00000
+        // MSB first Figure Shift lookup array.
+        // Code to char.
+        public static readonly char[] LsbFirstFigureLookup = new[]
+        {
+            '\0', // 00000
             '5',  // 00001
             '\r', // 00010
             '9',  // 00011
@@ -385,5 +385,5 @@
             '(',  // 11110
             '<'   // 11111 // Shift to letters
         };
-	}
+    }
 }

@@ -19,7 +19,7 @@ namespace TestBaudot
 
             foreach (var b in baudot)
             {
-                if(codesPrinted % 10 == 0)
+                if (codesPrinted % 10 == 0)
                 {
                     Console.WriteLine();
                 }

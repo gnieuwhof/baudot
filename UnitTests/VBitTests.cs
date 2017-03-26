@@ -38,7 +38,7 @@
             Assert.Throws<ArgumentOutOfRangeException>(
                 () => CastCreateVBit(val));
         }
-        
+
         [Test]
         public void TestVBitEquals()
         {
