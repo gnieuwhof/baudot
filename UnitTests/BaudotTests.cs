@@ -1,6 +1,6 @@
 ﻿namespace UnitTests
 {
-    using nl.gn.Baudot;
+    using nl.gn.BaudotPortable;
     using NUnit.Framework;
     using System;
     using System.Linq;

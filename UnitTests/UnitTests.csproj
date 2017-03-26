@@ -45,9 +45,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Baudot\Baudot.csproj">
-      <Project>{D252D068-C285-4C29-B01E-4BA70D2EE7EC}</Project>
-      <Name>Baudot</Name>
+    <ProjectReference Include="..\nl.gn.BaudotPortable\nl.gn.BaudotPortable.csproj">
+      <Project>{00b51bb2-0a8b-4e06-9228-ced93c976b77}</Project>
+      <Name>nl.gn.BaudotPortable</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -43,9 +43,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Baudot\Baudot.csproj">
-      <Project>{d252d068-c285-4c29-b01e-4ba70d2ee7ec}</Project>
-      <Name>Baudot</Name>
+    <ProjectReference Include="..\nl.gn.BaudotPortable\nl.gn.BaudotPortable.csproj">
+      <Project>{00b51bb2-0a8b-4e06-9228-ced93c976b77}</Project>
+      <Name>nl.gn.BaudotPortable</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

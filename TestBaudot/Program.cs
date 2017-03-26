@@ -1,4 +1,4 @@
-﻿using nl.gn.Baudot;
+﻿using nl.gn.BaudotPortable;
 using System;
 
 namespace TestBaudot
